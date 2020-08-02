@@ -15,5 +15,15 @@ class UsuarioAdmin(admin.ModelAdmin):
     inlines = [EquipoInline, ]
 
 
+class UsuarioEquipoInline(admin.TabularInline):
+    model = UsuarioEquipo
+    extra = 3
+
+
+class EquipoAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'imagen', 'fecha_creacion', 'lider')
+    inlines = [UsuarioEquipoInline, ]
+
+
 admin.site.register(Usuario, UsuarioAdmin)
-admin.site.register(Equipo)
+admin.site.register(Equipo, EquipoAdmin)

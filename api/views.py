@@ -13,7 +13,6 @@ class EquipoCreateView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         data = self.request.data
-        print(data)
         if "integrantes" in data:
             integrantes = data['integrantes']
             del data['integrantes']
@@ -24,6 +23,3 @@ class EquipoCreateView(generics.ListCreateAPIView):
                 UsuarioEquipo.objects.create(
                     equipo=equipo,
                     usuario_id=integrante)
-
-
-
