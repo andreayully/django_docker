@@ -3,6 +3,7 @@
 __ pycache __
 myenv/
 uploads/
+media/
 db.sqlite3
 .DS_Store
 

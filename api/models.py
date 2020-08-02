@@ -30,4 +30,4 @@ class UsuarioEquipo(models.Model):
     fecha_creacion = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return "{}-{}".format(self.usuario, self.equipo)
+        return "{}- Fecha llegada al equipo {}".format(self.usuario, self.fecha_creacion)
